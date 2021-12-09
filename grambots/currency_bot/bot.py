@@ -1,9 +1,11 @@
-from telegram import Bot
-import requests
+import os
 
-TELEGRAM_TOKEN = "<TELEGRAM_TOKEN>"
+import requests
+from telegram import Bot
+
+TELEGRAM_TOKEN = os.environ.get("TELEGRAM_TOKEN")
 bot = Bot(token=TELEGRAM_TOKEN)
-eur_to_inr_chat_id = 123456
+eur_to_inr_chat_id = os.environ.get("TELEGRAM_CHAT_ID")
 
 
 exchange_rate_url = "https://api.exchangerate.host/latest?symbols=EUR,INR"
